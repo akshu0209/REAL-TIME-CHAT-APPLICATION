@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write new chat</title>
+    <style>
+        body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #b588e5, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+/* Edit Chat Card */
+.edit-container {
+    width: 90%;
+    max-width: 500px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header */
+h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 22px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+/* Chat Information Box */
+.chat-info {
+    background: #f7f7f7;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    text-align: left;
+    border-left: 4px solid #6a11cb;
+}
+
+/* Labels */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+    text-align: left;
+}
+
+/* Textarea Styling */
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    resize: none;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+textarea:focus {
+    border-color: #2575fc;
+    outline: none;
+    box-shadow: 0 0 8px rgba(37, 117, 252, 0.5);
+}
+
+/* Save Button */
+button {
+    width: 100%;
+    background: linear-gradient(to right, #873bd8, #3175e9);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+    transform: scale(1.05);
+}
+
+/* Back Button */
+.back-btn {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #01032a;
+    font-weight: bold;
+    transition: 0.3s;
+    display: block;
+}
+
+.back-btn:hover {
+    color: #6a11cb;
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <h3>Write new Chat...</h3>
+    <form action="/chats" method="post">
+        <input type="text" placeholder="who are you" name="from"><br><br>
+        <textarea name="msg" placeholder="write your msg here"></textarea><br><br>
+        <input type="text" placeholder="Add receiver" name="to"><br><br>
+        <button>Create Chat</button>
+    </form>
+</body>
+</html>
